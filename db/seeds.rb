@@ -17,7 +17,7 @@ puts "Début de l'insémination..."
 # Ajout de n User à la base de données
 nb_users.times do |i|
   first_name = Faker::Games::Pokemon.name
-  last_name = Faker::JapaneseMedia::DragonBall.character
+  last_name = Faker::Games::SuperMario.character
   User.create(
     first_name: first_name,
     last_name: last_name,
