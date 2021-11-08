@@ -18,7 +18,6 @@ class UserMailer < ApplicationMailer
         @user = attendance.user
         @event = attendance.event
         
-
         @url  = 'https://secret-harbor-58504.herokuapp.com/login'
         
         #envoie la confimation de l'inscription à l'évènement
