@@ -1,0 +1,15 @@
+Salut <%= @user.first_name %> !
+==========================================================
+ 
+Tu t'es inscrit à <%= @event.title %> sur eventcodr !
+
+Voici les détails de ton évènement :
+
+-Date : <%= @event.start_time %>
+-Durée : <%= @event.duration %> minutes
+-Price : <%= @event.price %>
+-Description :<%= @event.description %>
+-Localisation :<%= @event.location %>
+-Administrateur :<%= @event.admin.email %>
+ 
+À très vite sur eventcodr !

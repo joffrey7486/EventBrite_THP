@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut <%= @user.first_name %> !</h1>
+    <p>
+      Tu t'es inscrit à <%= @event.title %> sur eventcodr !
+    </p>
+    <p>Voici les détails de ton évènement :</p>
+    <ul>
+        <li>Date : <%= @event.start_time %></li>
+        <li>Durée : <%= @event.duration %> minutes</li>
+        <li>Price : <%= @event.price %></li>
+        <li>Description :<%= @event.description %></li>
+        <li>Localisation :<%= @event.location %></li>
+        <li>Administrateur :<%= @event.admin.email %></li>
+    </ul>
+    <p>À très vite sur eventcodr !</p>
+  </body>
+</html>
+
