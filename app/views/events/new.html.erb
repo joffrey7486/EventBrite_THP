@@ -1,5 +1,14 @@
 <h1>Créer ton évènement</h1>
 
+<% if @event.errors.any? %>
+    <ul>
+        <% @event.errors.full_messages.each do |message| %>
+            <li class="alert alert-danger" role="alert"><%= message %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+
 <%= form_tag url_for(action: 'create'), method: "post" do %>
     
     <%= label_tag 'Title' %>
