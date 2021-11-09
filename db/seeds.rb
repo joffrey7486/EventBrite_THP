@@ -23,7 +23,7 @@ nb_users.times do |i|
     last_name: last_name,
     description: Faker::Hacker.say_something_smart ,
     email: first_name + last_name.downcase + "@yopmail.com",
-    encrypted_password: first_name + last_name
+    password: first_name + last_name
     )
 end
 

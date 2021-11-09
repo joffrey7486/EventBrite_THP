@@ -13,8 +13,8 @@ class User < ApplicationRecord
     presence: true,
     format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i },
     uniqueness: true
-    
-  def welcome_send
+
+    def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
 end

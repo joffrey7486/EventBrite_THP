@@ -1,0 +1,17 @@
+<h1>Mon évènement</h1>
+
+<h2>Voici les détails des festivité !</h2>
+<ul>
+    <li>Titre :  <%= @event.title %></li>
+    <li>Description : <%= @event.description %></li>
+    <li>Duration : <%= @event.duration %></li>
+    <li>Aura lieu le :  <%= @event.start_date %></li>
+    <li>Prix :  <%= @event.price %></li>
+    <li>Organisateur :  <%= @event.admin.first_name %> <%= @event.admin.last_name %></li>
+    <li>Nombre de participants : <%= @event.users.count %></li>
+</ul>
+
+<% if current_user == @event.admin %>
+  <%= link_to "Supprimer", event_path(@event.id), method: :delete %>
+<% end %>
+
