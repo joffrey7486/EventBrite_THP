@@ -19,7 +19,7 @@ Voici les requis pour la version initiale :
 ## 2. Index des révisions
 
 - Version initiale
-- [Rev 1](https://github.com/joffrey7486/EventBrite_THP/commit/10005ae62a3d2041d8ff9d26c1ff19aea0137d8d) : Mettre en place un système de gestion d'utilisateurs avec la gem ['devise'](https://github.com/heartcombo/devise) et quelques fonctionnalités CRUD
+- [Rev 1](https://github.com/joffrey7486/EventBrite_THP/commit/10005ae62a3d2041d8ff9d26c1ff19aea0137d8d) : Mettre en place un système de gestion d'utilisateurs avec la gem ['devise'](https://github.com/heartcombo/devise) et quelques fonctionnalités CRUD. Amélioration du front.
 
 ## 3. Prérequis à l'installation
 
@@ -29,7 +29,9 @@ Voici les requis pour la version initiale :
 
 ## 4. Lancement de l'application
 
-L'application est disponible sur Heroku à l'adresse suivante : [EventCodr](https://secret-harbor-58504.herokuapp.com/).
+L'application est disponible en ligne sur :
+
+> [**https://secret-harbor-58504.herokuapp.com/**](https://secret-harbor-58504.herokuapp.com/)
 
 Pour l'ouvrir en mode développement :
 
@@ -42,7 +44,11 @@ Pour l'ouvrir en mode développement :
 1. [Accéder à la page web](http://localhost:3000/accueil)
 1. Enjoy :smile:
 
-## 5. Crédits
+## 5. Questions? Bugs?
+
+Posez votre question [ici](https://github.com/joffrey7486/EventBrite_THP/issues/new/choose)  :smile:
+
+## 6. Crédits
 
 Une belle semaine en pair-programming chez [TheHackingProject](https://www.thehackingproject.org) !
 

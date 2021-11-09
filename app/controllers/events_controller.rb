@@ -21,8 +21,8 @@ class EventsController < ApplicationController
     @event = Event.new(
       title: params[:title],
       description: params[:description],
-      duration: params[:duration],
-      start_date: Date.strptime(params[:start_date], '%d/%m/%Y'),
+      duration: params[:duration], 
+      start_date: params[:start_date],
       price: params[:price],
       location: params[:location],
       admin: current_user

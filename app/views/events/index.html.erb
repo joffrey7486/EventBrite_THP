@@ -1,20 +1,31 @@
+<div class="container-fluid row text-center ">
 <h1>Bienvenue !!</h1>
 <h2>Voici tous les évènements disponibles</h2>
 
-<p>Find me in app/views/events/index.html.erb</p>
 <% if flash[:event_suppress_success] %>
   <div class="alert alert-success" role="alert"><%= flash[:event_suppress_success] %></div>
 <% end %>
 
+
 <% @events.each do |event| %>
+<div class="card  m-3 ">
+<div class="card-body ">
+<h5 class="card-title text-light">
+  <%= event.start_date.strftime('Le %e %b %Y') %> <br />
+  Durée : <%= event.duration %> minutes <br />
+  <%= event.price %>€
+</h5>
     <ul>
-        <li>Date : <%= event.start_date %></li>
-        <li>Durée : <%= event.duration %> minutes</li>
-        <li>Price : <%= event.price %>€</li>
-        <li>Description : <%= event.description %></li>
-        <li>Localisation : <%= event.location %></li>
-        <li>Nombre de participants : <%= event.users.count %></li>
-        <li>Organisateur : <%= event.admin.first_name %> <%= event.admin.last_name %></li>
-        <li><%= link_to "lien", event_path(event.id) %></li>
+        <li><%= event.description %></li>
+        <p>
+        <li class="info-event">Lieu : <%= event.location %></li>
+        <li class="info-event">Nombre de participants : <%= event.users.count %></li>
+        <li class="info-event">Organisateur : <%= event.admin.first_name %> <%= event.admin.last_name %></li>
+        </p>
     </ul>
+        <div class="btn btn-secondary mt-2 " ><%= link_to "lien", event_path(event.id), class: "btn-event" %></div>
+    
+</div>
+</div>
 <% end %>
+</div>

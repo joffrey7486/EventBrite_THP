@@ -1,17 +1,34 @@
-<h1>Mon évènement</h1>
+<div class="container-fluid row text-center ">
+  <h1>Mon évènement</h1>
 
-<h2>Voici les détails des festivité !</h2>
-<ul>
-    <li>Titre :  <%= @event.title %></li>
-    <li>Description : <%= @event.description %></li>
-    <li>Duration : <%= @event.duration %></li>
-    <li>Aura lieu le :  <%= @event.start_date %></li>
-    <li>Prix :  <%= @event.price %></li>
-    <li>Organisateur :  <%= @event.admin.first_name %> <%= @event.admin.last_name %></li>
-    <li>Nombre de participants : <%= @event.users.count %></li>
-</ul>
+  <h2>Le détail des festivités !</h2>
 
-<% if current_user == @event.admin %>
-  <%= link_to "Supprimer", event_path(@event.id), method: :delete %>
-<% end %>
+  <div class="card  m-3 ">
+  <div class="card-body ">
+  
+    <ul>
+      <li class="list-group-item"><h3><%= @event.title %></h3></li>
+      <li class="list-group-item"><%= @event.description %></li>
+      <li class="list-group-item">Durée : <%= @event.duration %> minutes</li>
+      <li class="list-group-item">Aura lieu le :  <%= @event.start_date.strftime('%e %b %Y') %></li>
+      <li class="list-group-item">Prix :  <%= @event.price %> €</li>
+      <li class="list-group-item">Organisateur :  <%= @event.admin.first_name %> <%= @event.admin.last_name %></li>
+      <li class="list-group-item">Nombre de participants : <%= @event.users.count %></li>
+    </ul>
 
+
+
+    <div class="user-box">
+        <div class="btn-b">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <% if current_user == @event.admin %>
+            <%= link_to "Supprimer", event_path(@event.id), method: :delete, :confirm=>'You sure?' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

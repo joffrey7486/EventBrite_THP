@@ -1,33 +1,57 @@
-<h1>Créer ton évènement</h1>
+<div class='container'>
+    <div class="login-box create-event">
+        <h1>Créer ton évènement</h1>
 
-<% if @event.errors.any? %>
-    <ul>
-        <% @event.errors.full_messages.each do |message| %>
-            <li class="alert alert-danger" role="alert"><%= message %></li>
+        <% if @event.errors.any? %>
+            <ul>
+                <% @event.errors.full_messages.each do |message| %>
+                    <li class="alert alert-danger" role="alert"><%= message %></li>
+                <% end %>
+            </ul>
         <% end %>
-    </ul>
-<% end %>
 
+        <div class="user-box">
+        </div>
 
-<%= form_tag url_for(action: 'create'), method: "post" do %>
-    
-    <%= label_tag 'Title' %>
-    <%= text_field_tag 'title', @event.title %><br />
+        <%= form_tag url_for(action: 'create'), method: "post" do %>
+            
+            <div class="field user-box">
+                <%= label_tag 'Title' %><br />
+                <%= text_field_tag 'title', @event.title %><br />
+            </div>
+            
+            <div class="user-box description">
+                <%= label_tag 'Description' %>
+                <%= text_area_tag 'description', @event.description %><br />
+            </div>
 
-    <%= label_tag 'Description' %>
-    <%= text_area_tag 'description', @event.description %><br />
+            <div class="user-box">
+                <%= label_tag 'Date de l\'évènement au format jj/mm/aaaa' %><br />
+                <%= text_field_tag 'start_date', @event.start_date %><br />
+            </div>
+            
+            <div class="user-box">
+                <%= label_tag 'Prix' %><br />
+                <%= text_field_tag 'price', @event.price %><br />
+            </div>
 
-    <%= label_tag 'Date de l\'évènement au format jj/mm/aaaa' %>
-    <%= text_field_tag 'start_date', @event.start_date %><br />
-    
-    <%= label_tag 'Prix' %>
-    <%= text_field_tag 'price', @event.price %><br />
-    
-    <%= label_tag 'Localisation' %>
-    <%= text_field_tag 'location', @event.location %><br />
+            <div class="user-box">
+                <%= label_tag 'Localisation' %><br />
+                <%= text_field_tag 'location', @event.location %><br />
+            </div>
 
-    <%= label_tag 'Durée' %>
-    <%= text_field_tag 'duration', @event.duration %><br />
-
-    <%= submit_tag "Create Post" %>
-<% end %>
+            <div class="user-box">
+                <%= label_tag 'Durée' %><br />
+                <%= text_field_tag 'duration', @event.duration %><br />
+            </div>
+            
+            <div class="btn-a">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <%= submit_tag "Create Post", class: "btn-log" %>
+            </div>
+        <% end %>
+    </div>
+</div>

@@ -1,9 +1,14 @@
-<h1>Mon profil</h1>
+<div class="container-fluid row text-center ">
+    <h1>Mon profil</h1>
 
-<h2>Salut beau gosse !</h2>
-<ul>
-    <li>Prénom :  <%= current_user.first_name %></li>
-    <li>Nom :  <%= current_user.last_name %></li>
-    <li>Description : <%= current_user.description %></li>
-    <li>Email : <%= current_user.email %></li>
-</ul>
+    <h2>Salut beau gosse !</h2>
+    <div class="card  m-3 ">
+    <div class="card-body ">
+        <ul>
+            <li class="list-group-item">Prénom :  <%= current_user.first_name %></li>
+            <li class="list-group-item">Nom :  <%= current_user.last_name %></li>
+            <li class="list-group-item">Description : <%= current_user.description %></li>
+            <li class="list-group-item">Email : <%= current_user.email %></li>
+        </ul>
+    </div>
+</div>
