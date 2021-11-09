@@ -76,3 +76,6 @@ end
 
 # add random datas for seed file
 gem 'faker'
+
+# add easyyyyyyyy authentication features 
+gem "devise"

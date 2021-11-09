@@ -22,6 +22,4 @@ class Event < ApplicationRecord
     return if duration.blank?
     errors.add(:duration, "must be a 5 multiplier") unless duration % 5 == 0
   end
-
-
 end
