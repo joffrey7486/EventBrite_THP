@@ -20,6 +20,7 @@ Voici les requis pour la version initiale :
 
 - Version initiale
 - [Rev 1](https://github.com/joffrey7486/EventBrite_THP/commit/10005ae62a3d2041d8ff9d26c1ff19aea0137d8d) : Mettre en place un système de gestion d'utilisateurs avec la gem ['devise'](https://github.com/heartcombo/devise) et quelques fonctionnalités CRUD. Amélioration du front.
+- [Rev 2](https://github.com/joffrey7486/EventBrite_THP/commit/509741b628a0aeb1ad050e0743caed4ac25e5a71) : Ajout d'un système de paiement pour participer aux évènements avec [Stripe](https://stripe.com/) et sa gem. Ajouts d'autres fonctionnalités du CRUD, notamemment pour gérer les évènements (modification, suppression, affichage des participants pour les organisateurs, etc...)
 
 ## 3. Prérequis à l'installation
 
