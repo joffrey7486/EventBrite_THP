@@ -1,6 +1,6 @@
 {
   "canvas": {
-    "version": "2.2.9",
+    "version": "2.2.10",
     "width": 2000,
     "height": 2000,
     "scrollTop": -7,
@@ -27,6 +27,7 @@
     "bracketType": "none",
     "setting": {
       "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
       "columnOrder": [
         "columnName",
         "columnDataType",
@@ -188,7 +189,7 @@
           "active": false,
           "left": 78,
           "top": 21,
-          "zIndex": 125,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60
         },
@@ -388,7 +389,7 @@
           "active": true,
           "left": 646,
           "top": 15,
-          "zIndex": 126,
+          "zIndex": 3,
           "widthName": 60,
           "widthComment": 60
         },
@@ -473,7 +474,7 @@
           "active": false,
           "left": 314,
           "top": 343,
-          "zIndex": 120,
+          "zIndex": 1,
           "widthName": 66.33349609375,
           "widthComment": 60
         },

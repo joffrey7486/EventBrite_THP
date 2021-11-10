@@ -36,6 +36,14 @@ class EventsController < ApplicationController
     end
   end
 
+  def edit
+    
+  end
+
+  def update
+    
+  end
+
   def destroy
     Event.find(params[:id]).destroy
     flash[:event_suppress_success] = "Evènement bien supprimé !"

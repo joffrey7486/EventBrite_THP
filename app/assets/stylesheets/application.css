@@ -325,6 +325,14 @@ li{
   animation-delay: .25s
 }
 
+.form-box{
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
 @keyframes btn-anim2 {
   0% {
     top: -100%;

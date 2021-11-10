@@ -79,3 +79,6 @@ gem 'faker'
 
 # add easyyyyyyyy authentication features 
 gem "devise"
+
+# add method paiement
+gem 'stripe'
