@@ -1,11 +1,11 @@
+<!-- Flash alerts -> must be "success" "danger" "warning" or "info" -->
+<% flash.each do |type, msg| %>
+  <div class="alert alert-<%= type %> my-2 text-center"><%= msg %></div>
+<% end %>
+
 <div class="container-fluid row text-center ">
 <h1>Bienvenue !!</h1>
 <h2>Voici tous les évènements disponibles</h2>
-
-<% if flash[:event_suppress_success] %>
-  <div class="alert alert-success" role="alert"><%= flash[:event_suppress_success] %></div>
-<% end %>
-
 
 <% @events.each do |event| %>
 <div class="card  m-3 ">

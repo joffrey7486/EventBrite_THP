@@ -52,7 +52,7 @@ class EventsController < ApplicationController
 
   def destroy
     Event.find(params[:id]).destroy
-    flash[:event_suppress_success] = "Evènement bien supprimé !"
+    flash[:info] = "Votre évènement a bien été supprimé !"
     redirect_to :root
   end
 
@@ -64,7 +64,7 @@ class EventsController < ApplicationController
 
   def is_event_admin?
     unless current_user == Event.find(params[:id]).admin
-      flash[:error] = "Vous n'avez pas accès à cette page"
+      flash[:warning] = "Vous n'avez pas accès à cette page"
       redirect_to events_path 
     end
   end
