@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  before_action :is_event_admin?, only: [:edit, :update, :destroy]
 
   def index
     @events = Event.all
@@ -59,5 +60,12 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :description, :duration, :start_date, :price, :location)
+  end
+
+  def is_event_admin?
+    unless current_user == Event.find(params[:id]).admin
+      flash[:error] = "Vous n'avez pas accès à cette page"
+      redirect_to events_path 
+    end
   end
 end
