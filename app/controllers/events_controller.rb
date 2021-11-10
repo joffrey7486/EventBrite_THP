@@ -15,10 +15,6 @@ class EventsController < ApplicationController
   end
 
   def create
-    puts '#'*80
-    puts params
-    puts '#'*80
-
     @event = Event.new(
       title: params[:title],
       description: params[:description],
