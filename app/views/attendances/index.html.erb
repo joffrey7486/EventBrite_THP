@@ -1,2 +1,32 @@
-<h1>Attendances#index</h1>
-<p>Find me in app/views/attendances/index.html.erb</p>
+<div class="container-fluid row text-center ">
+  <h1>Bienvenue <%= @event.admin.first_name %> <%= @event.admin.last_name %> !!</h1>
+  
+  <div class="card  m-3 ">
+    <div class="card-body ">
+      <ul>
+        <li class="list-group-item"><h3><%= @event.title %></h3></li>
+        <li class="list-group-item"><%= @event.description %></li>
+        <li class="list-group-item">Durée : <%= @event.duration %> minutes</li>
+        <li class="list-group-item">Aura lieu le :  <%= @event.start_date.strftime('%e %b %Y') %> à <%= @event.location %></li>
+        <li class="list-group-item">Prix :  <%= @event.price %> €</li>
+        <li class="list-group-item">Nombre de participants : <%= @event.users.count %></li>
+      </ul>
+    </div>
+    <div class="btn-b"><span></span><span></span><span></span><span></span>
+      <%= link_to "Modifier l'évènement", edit_event_path(@event) %>
+    </div>
+  </div>
+
+
+  
+  <div class="card  m-3 ">
+    <div class="card-body ">
+      <h2 class="card-title text-light">Voici tous les participants</h2>
+      <ul>
+        <% @users.each do |user| %>
+          <li class="info-event"> <%= user.first_name %> <%= user.last_name %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

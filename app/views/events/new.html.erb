@@ -20,14 +20,14 @@
                 <%= text_field_tag 'title', @event.title %><br />
             </div>
             
-            <div class="user-box description">
-                <%= label_tag 'Description' %>
-                <%= text_area_tag 'description', @event.description %><br />
+            <div class="user-box">
+                <%= label_tag 'Description' %><br />
+                <%= text_field_tag 'description', @event.description %><br />
             </div>
 
             <div class="user-box">
                 <%= label_tag 'Date de l\'évènement au format jj/mm/aaaa' %><br />
-                <%= text_field_tag 'start_date', @event.start_date %><br />
+                <%= date_field_tag 'start_date', @event.start_date %><br />
             </div>
             
             <div class="user-box">
@@ -50,7 +50,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <%= submit_tag "Create Post", class: "btn-log" %>
+                <%= submit_tag "C'est parti", class: "btn-log" %>
             </div>
         <% end %>
     </div>

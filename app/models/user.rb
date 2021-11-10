@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :attendances
   has_many :events, through: :attendances
 
+  has_many :attendances, foreign_key: 'user_id', class_name: 'Attendance'
+
   validates :email,
     presence: true,
     format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i },

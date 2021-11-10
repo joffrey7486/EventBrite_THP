@@ -1,8 +1,6 @@
 <div class="form-box">
-    
-    
 
-    <%= form_tag attendances_path do %>
+    <%= form_tag event_attendances_path do %>
 
     <article>
     <% if flash[:error].present? %>
@@ -21,6 +19,5 @@
         data-amount=<%= @stripe_amount %>
         data-locale="fr">
     </script>
-    <%= hidden_field_tag 'event', @event.id %>
     <% end %>
 </div>

@@ -13,7 +13,7 @@ class Event < ApplicationRecord
   validates :location, presence: true 
 
   belongs_to :admin, class_name: "User"
-  has_many :attendances
+  has_many :attendances, foreign_key: "event_id", class_name: "Attendance"
   has_many :users, through: :attendances
 
   private

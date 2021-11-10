@@ -30,11 +30,11 @@
           <span></span>
           <span></span>
           <% if current_user == @event.admin %>
-            <%= link_to "Mon espace évènement", event_path(@event.id), method: :delete, :confirm=>'You sure?' %>
+            <%= link_to "Mon espace évènement", event_attendances_path(@event) %>
           <% elsif @event.users.find_by(email: current_user.email)%>
             <p>Vous êtes bien inscrit à l'évènement!</p>
           <% else %>
-            <%= link_to "Rejoindre l'évènement", new_attendance_path(event: @event) %>
+            <%= link_to "Rejoindre l'évènement", new_event_attendance_path(@event) %>
           <% end %>
         </div>
       </div>
