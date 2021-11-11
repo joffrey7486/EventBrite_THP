@@ -13,6 +13,7 @@
   
     <ul>
       <li class="list-group-item"><h3><%= @event.title %></h3></li>
+      <li class="list-group-item"><%= image_tag @event.event_picture, alt: 'event_picture' if @event.event_picture.attached? %></li>
       <li class="list-group-item"><%= @event.description %></li>
       <li class="list-group-item">Durée : <%= @event.duration %> minutes</li>
       <li class="list-group-item">Aura lieu le :  <%= @event.start_date.strftime('%e %b %Y') %></li>
@@ -20,8 +21,6 @@
       <li class="list-group-item">Organisateur :  <%= @event.admin.first_name %> <%= @event.admin.last_name %></li>
       <li class="list-group-item">Nombre de participants : <%= @event.users.count %></li>
     </ul>
-
-
 
     <div class="user-box">
         <div class="btn-b">

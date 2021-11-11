@@ -82,3 +82,6 @@ gem "devise"
 
 # add method paiement
 gem 'stripe'
+
+# implemente validations methods for active storage
+gem 'active_storage_validations'

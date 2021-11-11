@@ -1,4 +1,9 @@
 <div class='container'>
+
+<% flash.each do |type, msg| %>
+  <div class="alert alert-<%= type %> my-2 text-center"><%= msg %></div>
+<% end %>
+
     <div class="login-box create-event">
         <h1>Créer ton évènement</h1>
 
@@ -13,7 +18,7 @@
         <div class="user-box">
         </div>
 
-        <%= form_tag url_for(action: 'create'), method: "post" do %>
+        <%= form_tag url_for(action: 'create'), multipart: true do %>
             
             <div class="field user-box">
                 <%= label_tag 'Title' %><br />
@@ -44,6 +49,12 @@
                 <%= label_tag 'Durée' %><br />
                 <%= text_field_tag 'duration', @event.duration %><br />
             </div>
+
+            <div class="user-box">
+                <%= file_field_tag :event_picture %>
+            </div>
+
+            
             
             <div class="btn-a">
                 <span></span>

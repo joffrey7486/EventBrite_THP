@@ -5,6 +5,15 @@
     <div class="card  m-3 ">
     <div class="card-body ">
         <ul>
+            <%if @user.profile_picture.attached?%>
+                <li><%= image_tag @user.profile_picture, alt: 'profile_picture' %></li>
+            <%else%>
+                <li>=== Il n'y a pas encore de photo de profil lié à cet utilisateur ===</li>
+                <%= form_tag user_profile_pictures_path(@user), multipart: true do %>
+                    <%= file_field_tag :profile_picture %>
+                    <%= submit_tag "uploader votre image de profile" %>
+                <% end %>
+            <%end%>
             <li class="list-group-item">Prénom :  <%= current_user.first_name %></li>
             <li class="list-group-item">Nom :  <%= current_user.last_name %></li>
             <li class="list-group-item">Description : <%= current_user.description %></li>

@@ -11,11 +11,12 @@ class Event < ApplicationRecord
   validate :end_after_start
   
   validates :location, presence: true 
-
+  validates :event_picture, attached: true, content_type: [:png, :jpg, :jpeg]
+  has_one_attached :event_picture
   belongs_to :admin, class_name: "User"
   has_many :attendances, foreign_key: "event_id", class_name: "Attendance"
   has_many :users, through: :attendances
-
+  
   private
 
   def end_after_start
