@@ -14,7 +14,7 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
   end
-
+ 
   def create
     @event = Event.new(
       title: params[:title],
@@ -33,14 +33,16 @@ class EventsController < ApplicationController
           redirect_to event_path(@event)
         else
           flash[:warning] = 'Il y eu un problème lors de l\'enregistrement'
+          render new_event_path
         end
       else
         flash[:warning] = 'Le fichier transmis ne correspond pas à une image'
+        render new_event_path
       end
     else
       flash[:info] = 'La photo de l\'évènement est obligatoire'
+      render new_event_path
     end
-    redirect_to new_event_path
   end
 
   def edit
@@ -63,11 +65,11 @@ class EventsController < ApplicationController
   end
 
   private 
-
+ 
   def event_params
-    params.require(:event_picture).permit(:title, :description, :duration, :start_date, :price, :location, :event_picture)
+    params.require(:event).permit(:title, :description, :duration, :start_date, :price, :location)
   end
-
+ 
   def is_event_admin?
     unless current_user == Event.find(params[:id]).admin
       flash[:warning] = "Vous n'avez pas accès à cette page"
@@ -80,8 +82,8 @@ class EventsController < ApplicationController
       unless params[:event_picture].content_type.start_with?('image')
         flash[:warning] = "Le fichier n'est pas une image"
         redirect_to new_event_path
-      end
-    rescue
+      end 
+    rescue 
       flash[:warning] = "Aucun fichier n'a été chargé"
       redirect_to new_event_path
     end
