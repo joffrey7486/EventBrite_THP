@@ -1,7 +1,7 @@
 <h1>Evènements en attente d'approbation par l'admin</h1>
 <% @events.each do |event| %>
   <div class="card" style="width: 50rem;">
-    <img src="..." class="card-img-top" alt="...">
+    <%= (image_tag event.event_picture, width: 300, class: "card-img-top") if event.event_picture.attached? %></li>
     <div class="card-body">
       <h5 class="card-title"><%= event.title %></h5>
       <p class="card-text"><%= event.description %></p>
@@ -20,3 +20,4 @@
     </div>
   </div>
 <% end %>
+

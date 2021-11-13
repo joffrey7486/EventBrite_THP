@@ -3,7 +3,7 @@
 <h2>Voici tous les évènements disponibles</h2>
 
 <% @events.each do |event| %>
-<div class="card  m-3 ">
+<div class="card m-3 ">
 <div class="card-body ">
 <h5 class="card-title text-light">
   <%= event.start_date.strftime('Le %e %b %Y') %> <br />
