@@ -1,0 +1,20 @@
+<h1>Console Administrateur</h1>
+<h3>Ravi de vous revoir <%= current_user.first_name %> !</h3>
+
+<table class="table table-striped table-hover table-bordered">
+  <tr>
+    <th scope="col">Utilisateurs inscrits sur la plateforme</th>
+    <th scope="col"><%= User.count %></th>
+    <th scope="col"><%= link_to 'Gestion utilisateurs', admin_users_path, class: "btn btn-outline-warning" %></th>
+  </tr>
+  <tr>
+    <th>Evènements enregistrés depuis toujours</th>
+    <th><%= Event.count %></th>
+    <th><%= link_to 'Gestion évènements', admin_events_path, class: "btn btn-outline-warning" %></th>
+  </tr>
+  <tr>
+    <th>Evènements en attente d'approbation</th>
+    <th><%= Event.where(validated: nil).count %></th>
+    <th><%= link_to 'Valider / Refuser', admin_event_submissions_path, class: "btn btn-outline-warning" %></th>
+  </tr>
+</table>

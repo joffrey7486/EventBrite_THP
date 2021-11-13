@@ -1,0 +1,22 @@
+<h1>Evènements en attente d'approbation par l'admin</h1>
+<% @events.each do |event| %>
+  <div class="card" style="width: 50rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%= event.title %></h5>
+      <p class="card-text"><%= event.description %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Lieu : <%= event.location %></li>
+      <li class="list-group-item">Date : <%= event.start_date.strftime('%d-%m-%Y') %></li>
+      <li class="list-group-item">Durée : <%= event.duration %></li>
+      <li class="list-group-item">Organisateur : <%= event.admin.first_name %> <%= event.admin.last_name %></li>
+      <li class="list-group-item">En attente depuis le <%= event.created_at.strftime('%d-%m-%Y') %></li>
+      <li class="list-group-item">Prix : <%= event.price %> €</li>
+    </ul>
+    <div class="card-body">
+      <%= link_to "Approuver", admin_event_submission_path(event), class: 'btn btn-success', data: { method: :patch } %>
+      <%= link_to "Refuser", admin_event_submission_path(event), class: 'btn btn-danger', data: { method: :delete, confirm: "ATTENTION !! Êtes vous sûr de vouloir supprimer cet évènement ?" } %>
+    </div>
+  </div>
+<% end %>

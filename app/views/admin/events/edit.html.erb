@@ -1,0 +1,22 @@
+<%= form_for ([:admin, @event]) do |f| %>
+    
+        <%= label_tag 'Titre' %><br />
+        <%= f.text_field :title %><br />
+        
+        <%= label_tag 'Lieu' %><br />
+        <%= f.text_field :location%><br />
+
+        <%= label_tag 'Description' %><br />
+        <%= f.text_area :description %><br />
+    
+        <%= label_tag 'Date' %><br />
+        <%= f.date_field :start_date %><br />
+
+        <%= label_tag 'Durée' %><br />
+        <%= f.text_field :duration %><br />
+
+        <%= label_tag 'Prix' %><br />
+        <%= f.text_field :price %><br />
+    
+        <button type="submit">Modifier</button>
+<% end %>

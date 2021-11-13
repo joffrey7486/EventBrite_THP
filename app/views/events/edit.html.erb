@@ -55,7 +55,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <button class="btn-log"><%= link_to "Supprimer", event_path(@event), method: :delete, class: "btn-log" %></button>
+                <button class="btn-log"><%= link_to "Supprimer", event_path(@event), class: "btn-log", data: {method: :delete, confirm: "Êtes vous sûr de vouloir supprimer votre évènement ?" } %></button>
         </div>
     </div>
 </div>

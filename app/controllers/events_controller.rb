@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 
   
   def index
-    @events = Event.all
+    @events = Event.where(validated: true).order(created_at: :desc)
   end
 
   def show
@@ -30,6 +30,7 @@ class EventsController < ApplicationController
       if params[:event_picture].content_type.start_with?('image')
         if @event.save
           @event.event_picture.attach(params[:event_picture])
+          flash[:success] = 'Votre évènement a bien été crée et est en attente d\'approbation par les admins. Vous recevrez un mail lorsqu\'il sera en ligne.'
           redirect_to event_path(@event)
         else
           flash[:warning] = 'Il y eu un problème lors de l\'enregistrement'

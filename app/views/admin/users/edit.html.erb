@@ -1,0 +1,19 @@
+<%= form_for ([:admin, @user]) do |f| %>
+    
+        <%= label_tag 'Nom de famille' %><br />
+        <%= f.text_field :last_name %><br />
+        
+        <%= label_tag 'Prénom' %><br />
+        <%= f.text_field :first_name%><br />
+
+        <%= label_tag 'Adresse mail' %><br />
+        <%= f.text_field :email %><br />
+    
+        <%= label_tag 'Description' %><br />
+        <%= f.text_area :description %><br />
+
+        <%= label_tag 'Admin' %><br />
+        <%= check_box :site_admin, checked = true %><br />
+    
+        <button type="submit">Modifier</button>
+<% end %>
