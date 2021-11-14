@@ -1,6 +1,6 @@
 <div class="container-fluid row text-center ">
-<h1>Bienvenue !!</h1>
-<h2>Voici tous les évènements disponibles</h2>
+<h1>Bienvenue !</h1>
+<h2>Tous les évènements</h2>
 
 <% @events.each do |event| %>
 <div class="card m-3 ">
@@ -8,17 +8,17 @@
 <h5 class="card-title text-light">
   <%= event.start_date.strftime('Le %e %b %Y') %> <br />
   Durée : <%= optimized_duration(event.duration) %><br />
-  <%= event.price %>€
+  <%= event.price %> €
 </h5>
     <ul>
-        <li><%= event.description %></li>
+        <li><h3><%= event.title %></h3></li>
         <p>
         <li class="info-event">Lieu : <%= event.location %></li>
         <li class="info-event">Nombre de participants : <%= event.users.count %></li>
         <li class="info-event">Organisateur : <%= event.admin.first_name %> <%= event.admin.last_name %></li>
         </p>
     </ul>
-        <div class="btn btn-secondary mt-2 " ><%= link_to "lien", event_path(event.id), class: "btn-event" %></div>
+        <%= link_to "détails", event_path(event.id), class: "btn btn-event btn-secondary mt-2" %>
     
 </div>
 </div>

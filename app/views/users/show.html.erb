@@ -6,7 +6,7 @@
     <div class="card-body ">
         <ul>
             <%if @user.profile_picture.attached?%>
-                <li><%= image_tag @user.profile_picture, alt: 'profile_picture' %></li>
+                <li><%= image_tag @user.profile_picture, alt: 'profile_picture', width: 300 %></li>
             <%else%>
                 <li>=== Il n'y a pas encore de photo de profil lié à cet utilisateur ===</li>
                 <%= form_tag user_profile_pictures_path(@user), multipart: true do %>
