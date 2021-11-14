@@ -23,6 +23,7 @@ Voici les requis pour la version initiale :
 - [Rev 1](https://github.com/joffrey7486/EventBrite_THP/commit/10005ae62a3d2041d8ff9d26c1ff19aea0137d8d) : Mettre en place un système de gestion d'utilisateurs avec la gem ['devise'](https://github.com/heartcombo/devise) et quelques fonctionnalités CRUD. Amélioration du front.
 - [Rev 2](https://github.com/joffrey7486/EventBrite_THP/commit/509741b628a0aeb1ad050e0743caed4ac25e5a71) : Ajout d'un système de paiement pour participer aux évènements avec [Stripe](https://stripe.com/) et sa gem. Ajouts d'autres fonctionnalités du CRUD, notamemment pour gérer les évènements (modification, suppression, affichage des participants pour les organisateurs, etc...)
 - [Rev 3](https://github.com/joffrey7486/EventBrite_THP/commit/7cc50602085f54677aba8c278b024f8ca1d3c1dd) : Possibilité d'ajouter un photo aux évènements ainsi qu'aux profils utilisateurs. Reprise de l'organisation du CSS pour l'asset pipeline.
+- [Rev 4](https://github.com/joffrey7486/EventBrite_THP/commit/366e1552863086c2d44512cd49206d9bd89c4b0a) : Ajout d'une console administrateur à l'application avec la possibilité de gérer les utilisateurs et les évènements. Mise en place d'un système d'approbation des évènements par les admins avant publication.
 
 ## 3. Prérequis à l'installation
 
