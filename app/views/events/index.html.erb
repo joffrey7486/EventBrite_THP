@@ -7,7 +7,7 @@
 <div class="card-body ">
 <h5 class="card-title text-light">
   <%= event.start_date.strftime('Le %e %b %Y') %> <br />
-  Durée : <%= event.duration %> minutes <br />
+  Durée : <%= optimized_duration(event.duration) %><br />
   <%= event.price %>€
 </h5>
     <ul>

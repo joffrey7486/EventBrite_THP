@@ -9,7 +9,7 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Lieu : <%= event.location %></li>
       <li class="list-group-item">Date : <%= event.start_date.strftime('%d-%m-%Y') %></li>
-      <li class="list-group-item">Durée : <%= event.duration %></li>
+      <li class="list-group-item">Durée : <%= optimized_duration(event.duration) %></li>
       <li class="list-group-item">Organisateur : <%= event.admin.first_name %> <%= event.admin.last_name %></li>
       <li class="list-group-item">En attente depuis le <%= event.created_at.strftime('%d-%m-%Y') %></li>
       <li class="list-group-item">Prix : <%= event.price %> €</li>
