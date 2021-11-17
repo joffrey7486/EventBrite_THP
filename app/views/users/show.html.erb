@@ -1,23 +1,25 @@
-<div class="container-fluid row text-center ">
-    <h1>Mon profil</h1>
 
-    <h2>Salut beau gosse !</h2>
-    <div class="card  m-3 ">
-    <div class="card-body ">
-        <ul>
-            <%if @user.profile_picture.attached?%>
-                <li><%= image_tag @user.profile_picture, alt: 'profile_picture', width: 300 %></li>
-            <%else%>
-                <li>=== Il n'y a pas encore de photo de profil lié à cet utilisateur ===</li>
-                <%= form_tag user_profile_pictures_path(@user), multipart: true do %>
-                    <%= file_field_tag :profile_picture %>
-                    <%= submit_tag "uploader votre image de profile" %>
-                <% end %>
-            <%end%>
-            <li class="list-group-item">Prénom :  <%= current_user.first_name %></li>
-            <li class="list-group-item">Nom :  <%= current_user.last_name %></li>
-            <li class="list-group-item">Description : <%= current_user.description %></li>
-            <li class="list-group-item">Email : <%= current_user.email %></li>
-        </ul>
+    <div class="container-fluid">
+      <div class="row row-grid justify-content-around align-items-center">
+        <div class="col-lg-7 order-lg-1 my-3">
+            <div class="img-fluid img-center">
+                <%if @user.profile_picture.attached?%>
+                    <%= image_tag @user.profile_picture, alt: 'profile_picture', width: 300 %>
+                <%else%>
+                    === Il n'y a pas encore de photo de profil lié à cet utilisateur ===
+                    <%= form_tag user_profile_pictures_path(@user), multipart: true do %>
+                        <%= file_field_tag :profile_picture %>
+                        <%= submit_tag "uploader votre image de profile" %>
+                    <% end %>
+                <%end%>
+            </div>
+        </div>
+        <div class="col-lg-5 order-lg-2">
+          <div class=" pr-lg-4">
+            <h5 class="h3"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+            <p class="lead mt-4 mb-5"><%= current_user.description %></p>
+            <p class="lead mt-4 mb-5"><%= current_user.email %></p>
+          </div>
+        </div>
+      </div>
     </div>
-</div>

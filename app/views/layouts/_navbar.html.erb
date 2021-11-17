@@ -9,7 +9,6 @@
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <%= link_to "Accueil", events_path, class: "nav-link active" %>
-          </a>
         </li>
         <li class="nav-item">
           <%= link_to "Créer un évènement", new_event_path, class: "nav-link active" %>
@@ -21,7 +20,6 @@
             <%= link_to "Mon profil", user_path(current_user.id) ,class:"dropdown-item"%>
             <%= link_to "Se déconnecter", destroy_user_session_path ,method:"delete", class: "dropdown-item"%>
           <% else %>
-              </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <%= link_to "S'inscrire", new_user_registration_path, class: "dropdown-item" %>
                 <%= link_to "Se connecter", new_user_session_path, class: "dropdown-item" %>

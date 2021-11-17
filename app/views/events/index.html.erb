@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <img src="https://picsum.photos/500/300" alt="A random image">
+    <%= event.event_picture.attached? ? (image_tag event.event_picture) : image_tag("https://picsum.photos/500/300") %>
       <div class="card-body">
         <p class="card-text">Lieu : <%= event.location %></p>
         <p class="card-text">Nombre de participants : <%= event.users.count %> <i class="fas fa-users"></i></i></p> 

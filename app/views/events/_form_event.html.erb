@@ -1,82 +1,81 @@
-<div class="form-container d-flex justify-content-center">
-  <%= form_for(@event, class:"form-signin col-lg-6 col-md-9 col-sm-12 p-5") do |f| %>
         
-        <!-- Input -->
-        <div class="js-form-message mb-3">
-          <div class="js-focus-state input-group form">
-            <div class="input-group-prepend form__prepend">
-              <span class="input-group-text form__text"><span class="fa fa-user form__text-inner"></span></span>
-            </div>
-            <%= f.text_field :title, autofocus: true, autocomplete: "first_name", class:"form-control form__input", placeholder:"Prénom" %>
-          </div>
+    <!-- Input -->
+    <div class="js-form-message mb-3">
+      <div class="js-focus-state input-group form">
+        <div class="input-group-prepend form__prepend">
+          <span class="input-group-text form__text"><span class="fa fa-user form__text-inner"></span></span>
         </div>
-        <!-- End Input -->
+        <%= text_field_tag('title', value = @event.title, options = { class:"form-control form__input", placeholder: "Titre" }) %>
+      </div>
+    </div>
+    <!-- End Input -->
 
-        <!-- Input -->
-        <div class="js-form-message mb-3">
-          <div class="js-focus-state input-group form">
-            <div class="input-group-prepend form__prepend">
-              <span class="input-group-text form__text"><span class="fa fa-user form__text-inner"></span></span>
-            </div>
-            <%= f.text_area :description, autofocus: true, autocomplete: "description", class:"form-control form__input", placeholder:"Description" %>  
-          </div>
+    <!-- Input -->
+    <div class="js-form-message mb-3">
+      <div class="js-focus-state input-group form">
+        <div class="input-group-prepend form__prepend">
+          <span class="input-group-text form__text"><span class="fa fa-user form__text-inner"></span></span>
         </div>
-        <!-- End Input -->
-    
-        <!-- Input -->
-        <div class="js-form-message mb-3">
-          <div class="js-focus-state input-group form">
-            <div class="input-group-prepend form__prepend">
-              <span class="input-group-text form__text"><span class="fa fa-user form__text-inner"></span></span>
-            </div>
-            <%= f.date_field :email, autofocus: true, autocomplete: "email", class:"form-control form__input", placeholder:"Adresse électronique" %>  
-          </div>
-        </div>
-        <!-- End Input -->
-    
-        <!-- Input -->
-        <div class="js-form-message mb-3">
-          <div class="js-focus-state input-group form">
-            <div class="input-group-prepend form__prepend">
-              <span class="input-group-text form__text"><span class="fa fa-lock form__text-inner"></span></span>
-            </div>
-            <%= f.text_field :password, autofocus: true, autocomplete: "password", class:"form-control form__input", placeholder:"Mot de passe" %>  
-          </div>
-        </div>
-        <!-- End Input -->
-    
-        <!-- Input -->
-        <div class="js-form-message mb-3">
-          <div class="js-focus-state input-group form">
-            <div class="input-group-prepend form__prepend">
-              <span class="input-group-text form__text"><span class="fa fa-key form__text-inner"></span></span>
-            </div>
-            <%= f.text_field :password_confirmation, autofocus: true, autocomplete: "new-password", class:"form-control form__input", placeholder:"Confirmation du mot de passe" %> 
-          </div>
-        </div>
-        <!-- End Input -->
+        <%= text_field_tag('description', value = @event.description, options = { class:"form-control form__input", placeholder: "Description" }) %>  
+      </div>
+    </div>
+    <!-- End Input -->
 
-        <!-- Input -->
-        <div class="js-form-message mb-3">
-          <div class="js-focus-state input-group form">
-            <div class="input-group-prepend form__prepend">
-              <span class="input-group-text form__text"><span class="fa fa-key form__text-inner"></span></span>
-            </div>
-            <%= f.text_field :password_confirmation, autofocus: true, autocomplete: "new-password", class:"form-control form__input", placeholder:"Confirmation du mot de passe" %> 
-          </div>
+    <!-- Input -->
+    <div class="js-form-message mb-3">
+      <div class="js-focus-state input-group form">
+        <div class="input-group-prepend form__prepend">
+          <span class="input-group-text form__text"><span class="fa fa-user form__text-inner"></span></span>
         </div>
-        <!-- End Input -->
+        <%= date_field_tag('start_date', value = @event.start_date, options = { class:"form-control form__input" }) %>
+      </div>
+    </div>
+    <!-- End Input -->
 
-    
-        <div class=" d-flex justify-content-center mb-3">
-          <button type="submit" class="btn btn-block btn-primary">Inscription</button>
+    <!-- Input -->
+    <div class="js-form-message mb-3">
+      <div class="js-focus-state input-group form">
+        <div class="input-group-prepend form__prepend">
+          <span class="input-group-text form__text"><span class="fa fa-lock form__text-inner"></span></span>
         </div>
-    
-        <div class="text-center mb-3">
-          <p class="text-muted">Vous avez déjà un compte? <%=link_to "Connectez-vous", new_user_session_path %></p>
-        </div>
-    
-        <p class="small text-center text-muted mb-0">Tous droits réservés. © CodR. 2021 THP School</p>
-    <% end %>
+        <%= text_field_tag('price', value = @event.price, options = { class:"form-control form__input", placeholder: "Prix" }) %>
+      </div>
+    </div>
+    <!-- End Input -->
 
-</div>
+    <!-- Input -->
+    <div class="js-form-message mb-3">
+      <div class="js-focus-state input-group form">
+        <div class="input-group-prepend form__prepend">
+          <span class="input-group-text form__text"><span class="fa fa-key form__text-inner"></span></span>
+        </div>
+        <%= text_field_tag('location', value = @event.location, options =  { class:"form-control form__input", placeholder: "Lieu" }) %>
+      </div>
+    </div>
+    <!-- End Input -->
+
+    <!-- Input -->
+    <div class="js-form-message mb-3">
+      <div class="js-focus-state input-group form">
+        <div class="input-group-prepend form__prepend">
+          <span class="input-group-text form__text"><span class="fa fa-key form__text-inner"></span></span>
+        </div>
+        <%= text_field_tag('duration', value = @event.duration, options = { class:"form-control form__input", placeholder: "Durée" }) %>
+      </div>
+    </div>
+    <!-- End Input -->
+
+    <div class="js-form-message mb-3">
+      <div class="js-focus-state input-group form">
+        <div class="input-group-prepend form__prepend">
+          <span class="input-group-text form__text"><span class="fa fa-key form__text-inner"></span></span>
+        </div>
+        <%= file_field_tag(:event_picture, options = { class:"form-control form__input", placeholder: "Durée" }) %>
+      </div>
+    </div>
+    
+    <div class=" d-flex justify-content-center mb-3">
+
+      <%= submit_tag "Soumettre", class: "btn btn-block btn-primary" %>
+    </div>
+

@@ -1,68 +1,25 @@
 <div class='container'>
 
-<% flash.each do |type, msg| %>
-  <div class="alert alert-<%= type %> my-2 text-center"><%= msg %></div>
-<% end %>
+    <% flash.each do |type, msg| %>
+    <div class="alert alert-<%= type %> my-2 text-center"><%= msg %></div>
+    <% end %>
 
-    <div class="login-box create-event">
-        <h1>Créer ton évènement</h1>
+    <h1 class="text-center py-5">Créer ton évènement</h1>
 
-        <% if @event.errors.any? %>
-            <ul>
-                <% @event.errors.full_messages.each do |message| %>
-                    <li class="alert alert-danger" role="alert"><%= message %></li>
-                <% end %>
-            </ul>
+    <% if @event.errors.any? %>
+        <ul>
+        <% @event.errors.full_messages.each do |message| %>
+            <li class="alert alert-danger" role="alert"><%= message %></li>
         <% end %>
+        </ul>
+    <% end %>
 
-        <div class="user-box">
-        </div>
+<div class="form-container d-flex justify-content-center">
+  <%= form_tag url_for(action: 'create'), class:"form-signin col-lg-6 col-md-9 col-sm-12 p-5", multipart: true do %>
 
-        <%= form_tag url_for(action: 'create'), multipart: true do %>
-            
-            <div class="field user-box">
-                <%= label_tag 'Title' %><br />
-                <%= text_field_tag 'title', @event.title %><br />
-            </div>
-            
-            <div class="user-box">
-                <%= label_tag 'Description' %><br />
-                <%= text_field_tag 'description', @event.description %><br />
-            </div>
+    <%= render 'form_event' %>
+  
+  <% end %>
+</div>
 
-            <div class="user-box">
-                <%= label_tag 'Date de l\'évènement au format jj/mm/aaaa' %><br />
-                <%= date_field_tag 'start_date', @event.start_date %><br />
-            </div>
-            
-            <div class="user-box">
-                <%= label_tag 'Prix' %><br />
-                <%= text_field_tag 'price', @event.price %><br />
-            </div>
-
-            <div class="user-box">
-                <%= label_tag 'Localisation' %><br />
-                <%= text_field_tag 'location', @event.location %><br />
-            </div>
-
-            <div class="user-box">
-                <%= label_tag 'Durée' %><br />
-                <%= text_field_tag 'duration', @event.duration %><br />
-            </div>
-
-            <div class="user-box">
-                <%= file_field_tag :event_picture %>
-            </div>
-
-            
-            
-            <div class="btn-a">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <%= submit_tag "C'est parti", class: "btn-log" %>
-            </div>
-        <% end %>
-    </div>
 </div>

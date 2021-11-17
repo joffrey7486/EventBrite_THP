@@ -1,62 +1,27 @@
 <div class='container'>
-    <div class="login-box create-event">
-        <h1>Modification</h1>
 
-        <% if @event.errors.any? %>
-            <ul>
-                <% @event.errors.full_messages.each do |message| %>
-                    <li class="alert alert-danger" role="alert"><%= message %></li>
-                <% end %>
-            </ul>
+    <% flash.each do |type, msg| %>
+    <div class="alert alert-<%= type %> my-2 text-center"><%= msg %></div>
+    <% end %>
+
+    <h1 class="text-center py-5">Modification</h1>
+
+    <% if @event.errors.any? %>
+        <ul>
+        <% @event.errors.full_messages.each do |message| %>
+            <li class="alert alert-danger" role="alert"><%= message %></li>
         <% end %>
+        </ul>
+    <% end %>
 
-        <%= form_for @event do |f| %>
-            
-            <div class="field user-box">
-                <%= label_tag 'Title' %><br />
-                <%= f.text_field :title%><br />
-            </div>
-            
-            <div class="user-box">
-                <%= label_tag 'Description' %><br />
-                <%= f.text_field :description %><br />
-            </div>
+    <div class="form-container d-flex justify-content-center">
+        <%= form_tag url_for(action: 'update'), class:"form-signin col-lg-6 col-md-9 col-sm-12 p-5", multipart: true do %>
 
-            <div class="user-box">
-                <%= label_tag 'Date de l\'évènement au format jj/mm/aaaa' %><br />
-                <%= f.date_field :start_date %><br />
-            </div>
-            
-            <div class="user-box">
-                <%= label_tag 'Prix' %><br />
-                <%= f.text_field :price %><br />
-            </div>
-
-            <div class="user-box">
-                <%= label_tag 'Localisation' %><br />
-                <%= f.text_field :location %><br />
-            </div>
-
-            <div class="user-box">
-                <%= label_tag 'Durée' %><br />
-                <%= f.text_field :duration %><br />
-            </div>
-            
-            <div class="btn-a">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <button class="btn-log" type="submit">Modifier</button>
-            </div>
-        <% end %>
-        <div class="btn-b">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <button class="btn-log"><%= link_to "Supprimer", event_path(@event), class: "btn-log", data: {method: :delete, confirm: "Êtes vous sûr de vouloir supprimer votre évènement ?" } %></button>
+        <%= render 'form_event' %>
+        
+        <div class=" d-flex justify-content-center mb-3">
+            <%= link_to 'Supprimer', event_path(@event), data: { method: :delete, confirm: "Êtes vous sûr de vouloir supprimer votre évènement ?" }, class: 'btn btn-block btn-danger'%>
         </div>
+    <% end %>
     </div>
 </div>
-
