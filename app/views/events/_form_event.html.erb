@@ -1,31 +1,13 @@
 <div class="form-container d-flex justify-content-center">
-  <%= form_for(resource, as: resource_name, class:"form-signin col-lg-6 col-md-9 col-sm-12 p-5", url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-        <!-- Title -->
-        <div class="text-center mb-4">
-            <h1 class="h3 mb-0">Inscription</h1>
-            <p>Remplissez les champs ci-dessous</p>
-        </div>
-        <!-- End Title -->
-
+  <%= form_for(@event, class:"form-signin col-lg-6 col-md-9 col-sm-12 p-5") do |f| %>
+        
         <!-- Input -->
         <div class="js-form-message mb-3">
           <div class="js-focus-state input-group form">
             <div class="input-group-prepend form__prepend">
               <span class="input-group-text form__text"><span class="fa fa-user form__text-inner"></span></span>
             </div>
-            <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class:"form-control form__input", placeholder:"Prénom" %>
-          </div>
-        </div>
-        <!-- End Input -->
-
-        <!-- Input -->
-        <div class="js-form-message mb-3">
-          <div class="js-focus-state input-group form">
-            <div class="input-group-prepend form__prepend">
-              <span class="input-group-text form__text"><span class="fa fa-user form__text-inner"></span></span>
-            </div>
-              <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class:"form-control form__input", placeholder:"Nom" %>  
+            <%= f.text_field :title, autofocus: true, autocomplete: "first_name", class:"form-control form__input", placeholder:"Prénom" %>
           </div>
         </div>
         <!-- End Input -->
@@ -47,7 +29,7 @@
             <div class="input-group-prepend form__prepend">
               <span class="input-group-text form__text"><span class="fa fa-user form__text-inner"></span></span>
             </div>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control form__input", placeholder:"Adresse électronique" %>  
+            <%= f.date_field :email, autofocus: true, autocomplete: "email", class:"form-control form__input", placeholder:"Adresse électronique" %>  
           </div>
         </div>
         <!-- End Input -->
@@ -58,7 +40,7 @@
             <div class="input-group-prepend form__prepend">
               <span class="input-group-text form__text"><span class="fa fa-lock form__text-inner"></span></span>
             </div>
-            <%= f.password_field :password, autofocus: true, autocomplete: "password", class:"form-control form__input", placeholder:"Mot de passe" %>  
+            <%= f.text_field :password, autofocus: true, autocomplete: "password", class:"form-control form__input", placeholder:"Mot de passe" %>  
           </div>
         </div>
         <!-- End Input -->
@@ -69,10 +51,22 @@
             <div class="input-group-prepend form__prepend">
               <span class="input-group-text form__text"><span class="fa fa-key form__text-inner"></span></span>
             </div>
-            <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "new-password", class:"form-control form__input", placeholder:"Confirmation du mot de passe" %> 
+            <%= f.text_field :password_confirmation, autofocus: true, autocomplete: "new-password", class:"form-control form__input", placeholder:"Confirmation du mot de passe" %> 
           </div>
         </div>
         <!-- End Input -->
+
+        <!-- Input -->
+        <div class="js-form-message mb-3">
+          <div class="js-focus-state input-group form">
+            <div class="input-group-prepend form__prepend">
+              <span class="input-group-text form__text"><span class="fa fa-key form__text-inner"></span></span>
+            </div>
+            <%= f.text_field :password_confirmation, autofocus: true, autocomplete: "new-password", class:"form-control form__input", placeholder:"Confirmation du mot de passe" %> 
+          </div>
+        </div>
+        <!-- End Input -->
+
     
         <div class=" d-flex justify-content-center mb-3">
           <button type="submit" class="btn btn-block btn-primary">Inscription</button>
@@ -85,5 +79,4 @@
         <p class="small text-center text-muted mb-0">Tous droits réservés. © CodR. 2021 THP School</p>
     <% end %>
 
-    <%= render "devise/shared/links" %>
 </div>

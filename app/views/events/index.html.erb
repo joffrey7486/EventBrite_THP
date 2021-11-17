@@ -1,26 +1,27 @@
-<div class="container-fluid row text-center ">
-<h1>Bienvenue !</h1>
-<h2>Tous les évènements</h2>
+<!-- Banner -->
+<%= render 'banner' %>
 
-<% @events.each do |event| %>
-<div class="card m-3 ">
-<div class="card-body ">
-<h5 class="card-title text-light">
-  <%= event.start_date.strftime('Le %e %b %Y') %> <br />
-  Durée : <%= optimized_duration(event.duration) %><br />
-  <%= event.price %> €
-</h5>
-    <ul>
-        <li><h3><%= event.title %></h3></li>
-        <p>
-        <li class="info-event">Lieu : <%= event.location %></li>
-        <li class="info-event">Nombre de participants : <%= event.users.count %></li>
-        <li class="info-event">Organisateur : <%= event.admin.first_name %> <%= event.admin.last_name %></li>
-        </p>
-    </ul>
-        <%= link_to "détails", event_path(event.id), class: "btn btn-event btn-secondary mt-2" %>
-    
+<div class="d-flex justify-content-center mt-5">
+  <h1 >Tous les évènements</h1>
 </div>
-</div>
-<% end %>
+<div class="col-lg-12 d-flex flex-wrap justify-content-center align-items-center">
+  <% @events.each do |event| %>
+    <div class="card border-primary mb-3 m-5 col-lg-4" style="max-width: 20rem;">
+    <div class="card-header"> 
+        <h4><%= event.title %></h4>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted"><i class="far fa-calendar-alt"></i> <%= event.start_date.strftime('Le %e %b %Y') %></p>
+          <p class="text-muted"><i class="fas fa-hand-holding-usd"></i> <%= event.price %> €</p>
+        </div>
+    </div>
+
+    <img src="https://picsum.photos/500/300" alt="A random image">
+      <div class="card-body">
+        <p class="card-text">Lieu : <%= event.location %></p>
+        <p class="card-text">Nombre de participants : <%= event.users.count %> <i class="fas fa-users"></i></i></p> 
+        <p class="card-text">Organisateur : <%= event.admin.first_name %> <%= event.admin.last_name %></p>
+        <%= link_to "détails", event_path(event.id), class: "card-link" %>   
+      </div>
+    </div>
+  <% end %>
 </div>

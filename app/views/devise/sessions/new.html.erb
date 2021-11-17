@@ -1,18 +1,34 @@
-<div class="login-box">
-  <h2>Log in</h2>
+<div class="form-container d-flex justify-content-center">
+  <%= form_for(resource, as: resource_name, class:"form-signin col-lg-6 col-md-9 col-sm-12 p-5", url: session_path(resource_name)) do |f| %>
 
-
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-    <div class="field user-box">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <!-- Title -->
+    <div class="text-center mb-4">
+      <h1 class="h3 mb-0">Connexion</h1>
+      <p>Remplissez les champs ci-dessous</p>
     </div>
+    <!-- End Title -->
 
-    <div class="field user-box">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
+    <!-- Input -->
+    <div class="js-form-message mb-3">
+      <div class="js-focus-state input-group form">
+        <div class="input-group-prepend form__prepend">
+          <span class="input-group-text form__text"><span class="fa fa-user form__text-inner"></span></span>
+        </div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control form__input", placeholder:"Adresse électronique" %>  
+      </div>
     </div>
+    <!-- End Input -->
+
+    <!-- Input -->
+    <div class="js-form-message mb-3">
+      <div class="js-focus-state input-group form">
+        <div class="input-group-prepend form__prepend">
+          <span class="input-group-text form__text"><span class="fa fa-lock form__text-inner"></span></span>
+        </div>
+        <%= f.password_field :password, autofocus: true, autocomplete: "current-password", class:"form-control form__input", placeholder:"Mot de passe" %>  
+      </div>
+    </div>
+    <!-- End Input -->
 
     <% if devise_mapping.rememberable? %>
       <div class="field remember">
@@ -20,16 +36,12 @@
         <%= f.label :remember_me %>
       </div>
     <% end %>
-
-    <div class="btn-a">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <%= f.submit "Log in", class: "btn-log" %>
+    
+    <div class=" d-flex justify-content-center mb-3">
+      <%= f.submit "Connection", class: "btn btn-block btn-primary" %>
     </div>
+      <div class="text-center mb-3">
+        <%= render "devise/shared/links" %>
+      </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
 </div>
-

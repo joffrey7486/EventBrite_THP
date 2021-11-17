@@ -688,15 +688,24 @@
   box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 .banner-image{
-  background: url("/images/vacations-g312aaae1f_1920.jpg");
+  background: linear-gradient(-225deg, rgba(214, 214, 214, 0.6) 5%, rgba(10,10,10,0.5)80%),url("vacations.jpg");
+  background-size: cover;
+  background-position-x: center;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #000;
   height: 500px;
   -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
   box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+.banner-image h1, h2 {
+  color: white;
+}
+
+textarea {
+  resize: none;  
 }
 /* MODIFICATION PERSONNEL FIN */
  
