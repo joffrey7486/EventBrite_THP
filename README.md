@@ -4,7 +4,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com/images/badges/made-with-ruby.svg)
 [![forthebadge](https://raw.githubusercontent.com/fleopaulD/README-parts/main/Badges/ftb-hosted-on-heroku.svg)](https://secret-harbor-58504.herokuapp.com/)
 
-## 1. À propos
+## 1. À propo
 
 Encore un super projet pour cette **semaine 7** de la formation développeur web, un [*Eventbrite*](https://www.eventbrite.fr/)-like ! Tous les jours de cette semaine des petites améliorations vont venir améliorer notre appli !
 
