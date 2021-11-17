@@ -13,7 +13,7 @@ module Admin
             flash[:success] = "L\'évènement a bien été validé."
             redirect_to admin_event_submissions_path
           else
-            flash[:warning] = "Something went wrong"
+            flash[:warning] = "Il y a eu un problème lors de l\'opération"
             render 'index'
           end
       end
@@ -24,7 +24,7 @@ module Admin
           flash[:success] = 'L\'évènement a bien été supprimé.'
           redirect_to admin_event_submissions_path
         else
-          flash[:warning] = 'Something went wrong'
+          flash[:warning] = 'Il y a eu un problème lors de l\'opération'
           redirect_to admin_event_submissions_path
         end
       end
